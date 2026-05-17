@@ -35,15 +35,6 @@ namespace NoNET
 		enet_uint32 in = 0; // unlimited incoming bandwidth
 		enet_uint32 out = 0; // unlimited outgoing bandwidth
 	};
-	
-	// struct ClientInfo
-	// {
-	// public:
-		// size_t id;
-		// char user[MAXCLIENTNAME];
-		// ENetAddress addr;
-		// ENetPeer* peer;
-	// }
 		
 	class Host
 	{
@@ -212,7 +203,6 @@ namespace NoNET
 	class Client : public Host
 	{
 	private:
-//		size_t id;
 		char name[MAXCLIENTNAME];
 		ENetPeer* peer = nullptr;
 	public:
@@ -318,33 +308,8 @@ namespace NoNET
 		}
 	};
 	
-	// class ClientManager
-	// {
-	// private:
-		// std::vector< ClientInfo > clients;
-// //		std::vector< ClientInfo > toAdd;
-		// size_t total = 0;
-	// public:
-		// ClientManager() {}
-		// ClientManager(std::vector< ClientInfo > list)
-			// : clients(list) {}
-		// size_t addClient(ClientInfo client)
-		// {
-			// clients.push_back(client);
-			
-			// return total++;
-		// }
-		// size_t getTotal()
-		// {
-			
-			// return 
-		// }
-	// };
-	
 	class Server : public NoNET::Host
 	{
-	private:
-		
 	public:
 		Server(NoNET::Bandwidth maxBandwidth, size_t maxConnections=MAXCONNECTIONS, size_t maxChannels=DEFAULTCHANNELS)
 			: Host(maxBandwidth, maxConnections, maxChannels) 
