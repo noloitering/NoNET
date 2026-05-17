@@ -129,7 +129,6 @@ namespace NoNET
 				}
 			}
 		}
-		// TODO: return event, or event type, or an int based on success?
 		ENetEvent poll(enet_uint32 sleep)
 		{
 			if ( enet_host_service(host, &event, sleep) > 0 )
@@ -176,7 +175,7 @@ namespace NoNET
 		}
 	};
 	
-//	wrapper for enet_host_create
+	//	wrapper for enet_host_create
 	inline int startup(const ENetAddress* addr, NoNET::Host& host, bool force=false)
 	{
 		if ( host.state == NoNET::OFFLINE || force )
@@ -200,6 +199,7 @@ namespace NoNET
 		return 0;
 	}
 	
+	// wrapper for enet_host_destroy
 	inline void shutdown(NoNET::Host& host, bool force=false)
 	{
 		if ( host.state == NoNET::ONLINE || force )
