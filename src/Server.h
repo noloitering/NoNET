@@ -25,11 +25,12 @@
 
 namespace NoNET
 {
-	//TODO: I just threw static here to shut the compiler up. Find the actual correct design decision to handle this (may involve cpp, maybe a config file?)
-	static const size_t DEFAULTCHANNELS = 2;
-	static const size_t MAXCONNECTIONS = 32;
-	static const size_t MAXCLIENTNAME =  32;
-	static const enet_uint16 DEFAULTPORT = 1234;
+	// TODO: read from config file
+	const size_t DEFAULTCHANNELS = 2;
+	const size_t MAXCONNECTIONS = 32;
+	const size_t MAXCLIENTNAME =  32;
+	const enet_uint16 DEFAULTPORT = 1234;
+	//TODO: I just threw static here to shut the compiler up. Find the actual correct design decision to handle this
 	static const ENetAddress DEFAULTADDRESS = (ENetAddress){ENET_HOST_ANY, NoNET::DEFAULTPORT};
 	enum State {OFFLINE, ONLINE};
 	
