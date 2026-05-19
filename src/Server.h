@@ -19,6 +19,9 @@
 #undef PlaySound
 
 #include <vector>
+#include <iostream>
+#include <memory>
+#include "raylib.h" // TODO: remove dependency by implementing Text functions
 
 namespace NoNET
 {
@@ -373,7 +376,7 @@ namespace NoNET
 		void broadcast(enet_uint8 channel, const char* payload, enet_uint8 flags=0)
 		{
 			ENetPacket* packet = enet_packet_create(payload, strlen(payload) + 1, flags);
-			enet_host_broadcast(host, 0, packet);
+			broadcast(channel, packet);
 		}
 		
 		int disconnect(ENetPeer* peer, enet_uint32 timeout=3000, bool force=false)
